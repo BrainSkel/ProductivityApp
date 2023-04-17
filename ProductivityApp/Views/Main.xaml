@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProductivityApp.Views.NewPage1"
              Title="Main">
-    <Grid>
+    <Grid
+        x:Name="MainLayout" BackgroundColor="#383838" HorizontalOptions="Fill" VerticalOptions="Center" ColumnDefinitions="auto,*" ColumnSpacing="4">
+        
         
     </Grid>
 </ContentPage>
