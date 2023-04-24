@@ -40,17 +40,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = ProductivityApp.Resources.
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/hanne/Desktop/coding/C\#/ProductivityApp/ProductivityApp/Views/Calendar.xaml]
+[C:/Users/hanne/Desktop/coding/C\#/ProductivityApp/ProductivityApp/Views/Search.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = ProductivityApp.Views.Calendar.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\Calendar.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\Calendar.xaml
-
-[C:/Users/hanne/Desktop/coding/C\#/ProductivityApp/ProductivityApp/Views/Main.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = ProductivityApp.Views.Main.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\Main.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\Main.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ProductivityApp.Views.Search.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Search.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Search.xaml
 
 [C:/Users/hanne/Desktop/coding/C\#/ProductivityApp/ProductivityApp/Views/Summary.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

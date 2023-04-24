@@ -3,39 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProductivityApp.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <VerticalStackLayout>
+        <Label Text="Tasks" HorizontalTextAlignment="Center" Style="{StaticResource BaseLabelHeaderStyle}"></Label>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+        <Grid
+        x:Name="MainLayout" BackgroundColor="#383838" HorizontalOptions="Fill" VerticalOptions="Center" ColumnDefinitions="auto,*" ColumnSpacing="4" Margin="20">
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+        </Grid>
 
-        </VerticalStackLayout>
-    </ScrollView>
+        <Grid x:Name="Navigation" BackgroundColor="#474747" VerticalOptions="Center">
+            <HorizontalStackLayout
+                Spacing="4"
+                Grid.Row="0"
+                Grid.Column="3"
+                HorizontalOptions="Center">
+                <Button Grid.Row="0" Grid.Column="1" Text="Home" HorizontalOptions="Center" Margin="12" Clicked="HomeButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+                <Button Grid.Row="0" Grid.Column="2" Text="Search" HorizontalOptions="Center" Margin="12" Clicked="SearchButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+                <Button Grid.Row="0" Grid.Column="3" Text="Summary" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+            </HorizontalStackLayout>
+        </Grid>
+
+
+
+    </VerticalStackLayout>
+    
 
 </ContentPage>
