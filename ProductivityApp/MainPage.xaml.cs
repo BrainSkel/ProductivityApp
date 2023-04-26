@@ -8,9 +8,17 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void HomeButton_Clicked(object sender, EventArgs e)
+    public void HomeButton_Clicked(object sender, EventArgs e)
     {
 
     }
+	public void SearchButton_Clicked(Object sender, EventArgs e)
+	{
+
+	}
+	public void SummaryButton_Clicked(object sender, EventArgs e)
+	{
+
+	}
 }
 
