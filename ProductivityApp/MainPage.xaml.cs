@@ -1,4 +1,6 @@
-﻿namespace ProductivityApp;
+﻿using ProductivityApp.Views;
+
+namespace ProductivityApp;
 
 public partial class MainPage : ContentPage
 {
@@ -8,17 +10,14 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-    public void HomeButton_Clicked(object sender, EventArgs e)
-    {
+    public void HomeButton_Clicked(System.Object sender, System.EventArgs e)
+        => Application.Current.MainPage = new NavigationPage(new MainPage());
 
-    }
-	public void SearchButton_Clicked(Object sender, EventArgs e)
-	{
+	public void SearchButton_Clicked(System.Object sender, System.EventArgs e)
+        => Application.Current.MainPage = new NavigationPage(new Search());
 
-	}
-	public void SummaryButton_Clicked(object sender, EventArgs e)
-	{
+	public void SummaryButton_Clicked(System.Object sender, System.EventArgs e)
+        => Application.Current.MainPage = new NavigationPage(new Summary());
 
-	}
 }
 
