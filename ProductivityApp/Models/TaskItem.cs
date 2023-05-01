@@ -1,8 +1,6 @@
-﻿
-
-namespace ProductivityApp.Models
+﻿namespace ProductivityApp.Models
 {
-    internal class Task
+    public class TaskItem
     {
         public string Id { get; set; }
         public string Name { get; set; }
