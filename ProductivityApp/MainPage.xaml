@@ -9,8 +9,7 @@
 
         <Grid
         x:Name="MainLayout" BackgroundColor="#383838" HorizontalOptions="Fill" VerticalOptions="Center" ColumnDefinitions="auto,*" ColumnSpacing="4" Margin="20">
-
-
+            <Button Grid.Row="0" Grid.Column="1" Text="TestPage" HorizontalOptions="Center" Margin="12" Clicked="TestPage" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
         </Grid>
 
         <Grid x:Name="Navigation" BackgroundColor="#474747" VerticalOptions="Center">
@@ -28,6 +27,6 @@
 
 
     </VerticalStackLayout>
-    
+
 
 </ContentPage>
