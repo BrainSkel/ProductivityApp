@@ -4,9 +4,15 @@
              x:Class="ProductivityApp.Views.Search"
              Title="Search">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <SearchBar Placeholder="Search items..."
+           CancelButtonColor="Orange"
+           PlaceholderColor="Orange"
+           TextColor="Black"
+           TextTransform="Lowercase"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic" />
     </VerticalStackLayout>
+    
 </ContentPage>
+    
