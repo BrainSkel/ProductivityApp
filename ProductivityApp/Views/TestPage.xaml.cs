@@ -13,35 +13,40 @@ namespace ProductivityApp.Views
         private readonly ChartDatabase _chartDatabase;
         public ObservableCollection<TaskItem> TaskItems { get; set; }
 
-        public TestPage()
-        {
-            InitializeComponent();
-
-            // Get the path of the SQLite database file
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ChartDataBase.db3");
-
-            // Create an instance of the ChartDatabase class
-            _chartDatabase = new ChartDatabase(dbPath);
-
-            // Initialize the ObservableCollection with the data from the TaskItem SQLite table
-            TaskItems = new ObservableCollection<TaskItem>(_chartDatabase.GetChartDataModel());
-
-            // Bind the TaskItems collection to the ListView control
-            MyListView.ItemsSource = TaskItems;
-        }
-
         private void Button_Clicked(object sender, EventArgs e)
         {
-            App.Database.SaveChartDataModelAsync(new TaskItem
-            {
-                Name ="test1",
-                Date= "2022-02-03",
-                Priority = "2",
-                Done = true,
-                Id= "1"
-                
-            });
 
         }
+
+        //public TestPage()
+        //{
+        //    InitializeComponent();
+
+        //    // Get the path of the SQLite database file
+        //    string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ChartDataBase.db3");
+
+        //    // Create an instance of the ChartDatabase class
+        //    _chartDatabase = new ChartDatabase(dbPath);
+
+        //    // Initialize the ObservableCollection with the data from the TaskItem SQLite table
+        //    TaskItems = new ObservableCollection<TaskItem>(_chartDatabase.GetChartDataModel());
+
+        //    // Bind the TaskItems collection to the ListView control
+        //    MyListView.ItemsSource = TaskItems;
+        //}
+
+        //private void Button_Clicked(object sender, EventArgs e)
+        //{
+        //    App.Database.SaveChartDataModelAsync(new TaskItem
+        //    {
+        //        Name ="test1",
+        //        Date= "2022-02-03",
+        //        Priority = "2",
+        //        Done = true,
+        //        Id= "1"
+
+        //    });
+
+        //}
     }
 }

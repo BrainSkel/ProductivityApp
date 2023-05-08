@@ -40,5 +40,22 @@ namespace ProductivityApp.Data
         {
             return _database.Delete(chartDataModel);
         }
+        
+
+        public void DeleteRecordById(int id)
+        {
+
+            _database.CreateTable<TaskItem>();
+
+
+            var record = _database.Table<TaskItem>().FirstOrDefault(x => x.Id == id);
+
+            if (record != null)
+            {
+
+                _database.Delete(record);
+
+            }
+        }
     }
 }

@@ -2,8 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ProductivityApp"
              x:Class="ProductivityApp.Views.TestPage">
-
-    <StackLayout>
+    
+        <StackLayout>
         <Button Clicked="Button_Clicked" Text="Add new"></Button>
         <ListView x:Name="MyListView" HasUnevenRows="True">
             <ListView.ItemTemplate>
@@ -13,11 +13,12 @@
                             <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
                             <Label Text="{Binding Priority}" FontSize="16" />
                             <Label Text="{Binding Date}" FontSize="14" />
+                            
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-
+        
 </ContentPage>
