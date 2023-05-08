@@ -4,15 +4,58 @@
              x:Class="ProductivityApp.Views.Search"
              Title="Search">
     <VerticalStackLayout>
-        <SearchBar Placeholder="Search items..."
-           CancelButtonColor="Orange"
-           PlaceholderColor="Orange"
-           TextColor="Black"
-           TextTransform="Lowercase"
-           HorizontalTextAlignment="Center"
-           FontSize="Medium"
-           FontAttributes="Italic" />
-    </VerticalStackLayout>
+
+        <Grid x:Name="MainLayout" BackgroundColor="LightBlue" HorizontalOptions="Fill" VerticalOptions="Center" ColumnDefinitions="auto,*" ColumnSpacing="4" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+            <Label Text="Search:" TextColor="Black" Grid.Row="0" Grid.Column="0" Margin="12"/>
+            <Entry x:Name="SearchTask" Placeholder="Search..." Grid.Row="0" Grid.Column="1" Margin="12"/>
+            
+
+
+
+
+
+
+
+        </Grid>
+        <ListView x:Name="MyListView" HasUnevenRows="True">
+        
+            
+           
+            <ListView.ItemTemplate>
+            <DataTemplate>
+                
+                <ViewCell>
+                   
+                    <StackLayout Padding="10,5">
+                        
+                        <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="{Binding Priority}" FontSize="16" />
+                        <Label Text="{Binding Date}" FontSize="14" />
+                            <Button Text="✖" Clicked="Button_Clicked" BackgroundColor="#474747" HeightRequest="35" VerticalOptions="Center"/>
+
+
+
+
+                        </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
     
+    
+
+    
+
+        
+
+        
+
+    </VerticalStackLayout>
 </ContentPage>
+
     
