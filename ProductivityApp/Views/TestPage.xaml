@@ -7,12 +7,15 @@
         <Button Clicked="Button_Clicked" Text="Add new"></Button>
         <ListView x:Name="MyListView" HasUnevenRows="True">
             <ListView.ItemTemplate>
+                
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10,5">
                             <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
                             <Label Text="{Binding Priority}" FontSize="16" />
                             <Label Text="{Binding Date}" FontSize="14" />
+                        
+                            <Button Text="X" Clicked="Button_Clicked_1"></Button>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

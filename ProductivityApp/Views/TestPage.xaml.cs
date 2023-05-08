@@ -38,9 +38,16 @@ namespace ProductivityApp.Views
                 Date= "2022-02-03",
                 Priority = "2",
                 Done = true,
-                Id= "1"
-                
             });
+
+            Console.WriteLine("GetFolderPath: {0}",
+                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
+
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            App.Database.DeleteRecordById(Id);
 
         }
     }

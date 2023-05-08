@@ -32,13 +32,25 @@ namespace ProductivityApp.Data
                 throw new Exception("Null");
             }
 
+            chartDataModel.Id = Guid.NewGuid();
+
             return _database.Insert(chartDataModel);
         }
+
 
         //Delete an item in the database 
         public int DeleteChartDataModelAsync(TaskItem chartDataModel)
         {
             return _database.Delete(chartDataModel);
+        }
+        public void DeleteRecordById(Guid id)
+        {
+            var record = _database.Table<TaskItem>().FirstOrDefault(x => x.Id == id);
+
+            if (record != null)
+            {
+                _database.Delete(record);
+            }
         }
     }
 }
