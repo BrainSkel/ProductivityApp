@@ -7,9 +7,23 @@
         <Label Text="Tasks" HorizontalTextAlignment="Center" Style="{StaticResource BaseLabelHeaderStyle}"></Label>
 
 
-        <Grid
-        x:Name="MainLayout" BackgroundColor="#383838" HorizontalOptions="Fill" VerticalOptions="Center" ColumnDefinitions="auto,*" ColumnSpacing="4" Margin="20">
-            <Button Grid.Row="0" Grid.Column="1" Text="TestPage" HorizontalOptions="Center" Margin="12" Clicked="TestPage" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+        <Grid>
+            <ListView x:Name="MyListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10,5">
+                                <Label Text="{Binding Id}" FontSize="18" />
+                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding Priority}" FontSize="16" />
+                                <Label Text="{Binding Date}" FontSize="14" />
+                                <Label Text="{Binding Done}" FontSize="18" FontAttributes="Bold" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
 
         <Grid x:Name="Navigation" BackgroundColor="#474747" VerticalOptions="Center">
@@ -18,6 +32,7 @@
                 Grid.Row="0"
                 Grid.Column="3"
                 HorizontalOptions="Center">
+                <!--<Button Grid.Row="0" Grid.Column="3" Text="Test Page" HorizontalOptions="Center" Margin="12" Clicked="TestPage" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>-->
                 <Button Grid.Row="0" Grid.Column="1" Text="Home" HorizontalOptions="Center" Margin="12" Clicked="HomeButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
                 <Button Grid.Row="0" Grid.Column="2" Text="Search" HorizontalOptions="Center" Margin="12" Clicked="SearchButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
                 <Button Grid.Row="0" Grid.Column="3" Text="Summary" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>

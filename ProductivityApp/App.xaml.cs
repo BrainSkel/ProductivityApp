@@ -18,6 +18,7 @@ public partial class App : Application
             if (database == null)
             {
                 database = new ChartDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ChartDataBase.db3"));
+
             }
             return database;
         }
