@@ -12,11 +12,12 @@ public partial class Search : ContentPage
     private readonly ChartDatabase _chartDatabase;
     public ObservableCollection<TaskItem> TaskItems { get; set; }
     private SearchBar _searchBar = new SearchBar { Placeholder = "Search items..." };
-    private ListView _MyListView = new ListView();
+    private Grid _Navigation = new Grid();
     private String query = "";
     public Search()
     {
         InitializeComponent();
+        _Navigation = Navigation;
 
         // Get the path of the SQLite database file
         string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ChartDataBase.db3");
@@ -35,13 +36,15 @@ public partial class Search : ContentPage
         var stackLayout = new StackLayout();
         stackLayout.Children.Add(_searchBar);
         stackLayout.Children.Add(MyListView);
+        stackLayout.Children.Add(_Navigation);
+
         OnSearchBarTextChanged(this, new TextChangedEventArgs("", ""));
         Content = stackLayout;
         // Attach event handlers
         _searchBar.TextChanged += OnSearchBarTextChanged;
-        
+
     }
-    
+
 
     private void OnSearchBarTextChanged(object sender, TextChangedEventArgs e)
     {
