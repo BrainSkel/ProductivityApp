@@ -35,7 +35,7 @@ namespace ProductivityApp.Views
             App.Database.SaveChartDataModelAsync(new TaskItem
             {
                 Name ="test1",
-                Date= "2022-02-03",
+                Date= DateTime.Parse("2022-02-03"),
                 Priority = "2",
                 Done = true,
             });

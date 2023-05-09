@@ -1,4 +1,6 @@
-﻿using SQLite;
+﻿
+using SQLite;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProductivityApp.Models
 {
@@ -6,9 +8,13 @@ namespace ProductivityApp.Models
     {
         [PrimaryKey]
         public Guid Id { get; set; }
+        [Display(Name= "Task Name")]
         public string Name { get; set; }
+        [Display(Name = "Priority")]
         public string Priority { get; set; }
-        public string Date { get; set; }
+        [Display(Name = "Date")]
+        public DateTime Date { get; set; }
+        [Display(Name = "Completed?")]
         public bool Done { get; set; }
 
     }

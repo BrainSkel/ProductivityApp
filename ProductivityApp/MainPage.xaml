@@ -3,22 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProductivityApp.MainPage">
 
-    <VerticalStackLayout>
-        <Label Text="Tasks" HorizontalTextAlignment="Center" Style="{StaticResource BaseLabelHeaderStyle}"></Label>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        
 
 
         <Grid>
-            <ListView x:Name="MyListView" HasUnevenRows="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Text="Tasks" HorizontalTextAlignment="Center" Style="{StaticResource BaseLabelHeaderStyle}"></Label>
+            
+            <ListView x:Name="MyListView" HasUnevenRows="True" Margin="15,0,15,0" HorizontalOptions="Center" Grid.Row="1">
+                
                 <ListView.ItemTemplate>
-
+                    
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10,5">
-                                <Label Text="{Binding Id}" FontSize="18" />
-                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
-                                <Label Text="{Binding Priority}" FontSize="16" />
-                                <Label Text="{Binding Date}" FontSize="14" />
-                                <Label Text="{Binding Done}" FontSize="18" FontAttributes="Bold" />
+                            <StackLayout Padding="10,5" HorizontalOptions="Center">
+                                <HorizontalStackLayout  >
+                                    <Label Text="Name: "  FontSize="20"></Label>
+                                    <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout  >
+                                    <Label Text="Date: "  FontSize="16"></Label>
+                                    <Label Text="{Binding Date}" FontSize="16" FontAttributes="Bold" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout  >
+                                    <Label Text="Finished: "  FontSize="16"></Label>
+                                    <Label Text="{Binding Done}" FontSize="16" FontAttributes="Bold" />
+                                </HorizontalStackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -26,13 +45,13 @@
             </ListView>
         </Grid>
 
-        <Grid x:Name="Navigation" BackgroundColor="#474747" VerticalOptions="Center">
+        <Grid x:Name="Navigation" BackgroundColor="#474747"  HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="1">
             <HorizontalStackLayout
                 Spacing="4"
                 Grid.Row="0"
                 Grid.Column="3"
                 HorizontalOptions="Center">
-                <Button Grid.Row="0" Grid.Column="3" Text="Test Page" HorizontalOptions="Center" Margin="12" Clicked="TestPage" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+                <!--<Button Grid.Row="0" Grid.Column="3" Text="Test Page" HorizontalOptions="Center" Margin="12" Clicked="TestPage" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>-->
                 <Button Grid.Row="0" Grid.Column="1" Text="Home" HorizontalOptions="Center" Margin="12" Clicked="HomeButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
                 <Button Grid.Row="0" Grid.Column="2" Text="Search" HorizontalOptions="Center" Margin="12" Clicked="SearchButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
                 <Button Grid.Row="0" Grid.Column="3" Text="Summary" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
@@ -41,7 +60,7 @@
 
 
 
-    </VerticalStackLayout>
+    </Grid>
 
 
 </ContentPage>
