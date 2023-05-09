@@ -37,7 +37,6 @@ public partial class Search : ContentPage
         stackLayout.Children.Add(_searchBar);
         stackLayout.Children.Add(MyListView);
         stackLayout.Children.Add(_Navigation);
-
         OnSearchBarTextChanged(this, new TextChangedEventArgs("", ""));
         Content = stackLayout;
         // Attach event handlers
