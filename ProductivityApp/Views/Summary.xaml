@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProductivityApp.Views.Summary"
              Title="Summary">
     <VerticalStackLayout>
-
         <Label Text="Summary"/>
 
         <Grid x:Name="MainLayout" BackgroundColor="#383838" HorizontalOptions="Fill" VerticalOptions="Center" ColumnDefinitions="auto,*" ColumnSpacing="4" Margin="20">
@@ -13,37 +11,36 @@
                 <RowDefinition />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
-            <Label Text="Description:" TextColor="White" Grid.Row="0" Grid.Column="0" Margin="12"/>
-                <Entry x:Name="DescriptionEntry" Placeholder="Enter Description" Grid.Row="0" Grid.Column="1" Margin="12"/>
 
-                <Label Text="Date:" TextColor="White" Grid.Row="1" Grid.Column="0" Margin="12"/>
-                <DatePicker x:Name="DateEntry" Grid.Row="1" Grid.Column="1" Margin="12"/>
+            <Label Text="Task Name:" TextColor="White" Grid.Row="0" Grid.Column="0" Margin="12"/>
+            <Entry x:Name="TaskName" Placeholder="Enter Task Name" Grid.Row="0" Grid.Column="1" Margin="12"/>
 
-                <Label Text="Priority:" TextColor="White" Grid.Row="2" Grid.Column="0" Margin="12"/>
-                <Picker x:Name="PriorityPicker" Grid.Row="2" Grid.Column="1" Margin="12">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-            
+            <Label Text="Date:" TextColor="White" Grid.Row="1" Grid.Column="0" Margin="12"/>
+            <DatePicker x:Name="DateEntry" Grid.Row="1" Grid.Column="1" Margin="12"/>
+
+            <Label Text="Priority:" TextColor="White" Grid.Row="2" Grid.Column="0" Margin="12"/>
+            <Picker x:Name="PriorityPicker" Grid.Row="2" Grid.Column="1" Margin="12">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
         </Grid>
+
         <Grid x:Name="Navigation" BackgroundColor="#474747" VerticalOptions="Center">
             <HorizontalStackLayout
                 Spacing="4"
                 Grid.Row="0"
                 Grid.Column="3"
                 HorizontalOptions="Center">
-                <Button Grid.Row="0" Grid.Column="4" Text="MARK AS DONE" HorizontalOptions="Center" Margin="12" BackgroundColor="{StaticResource MarkAsDoneButtonColor}"></Button>
-                <Button Grid.Row="0" Grid.Column="5" Text="CONFIRM" HorizontalOptions="Center" Margin="12" BackgroundColor="{StaticResource ConfirmButtonColor}"></Button>
-                <Button Grid.Row="0" Grid.Column="6" Text="DELETE" HorizontalOptions="Center" Margin="12" BackgroundColor="{StaticResource DeleteButtonColor}"></Button>
+                <!--<Button Grid.Row="0" Grid.Column="4" Text="MARK AS DONE" HorizontalOptions="Center" Margin="12" BackgroundColor="{StaticResource MarkAsDoneButtonColor}"></Button>-->
+                <Button Grid.Row="0" Grid.Column="5" Text="CREATE" HorizontalOptions="Center" Clicked="CreateButton_Clicked" Margin="12" BackgroundColor="{StaticResource ConfirmButtonColor}"></Button>
             </HorizontalStackLayout>
         </Grid>
-
     </VerticalStackLayout>
 </ContentPage>
