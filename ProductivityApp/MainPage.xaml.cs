@@ -31,7 +31,7 @@ public partial class MainPage : ContentPage
         => Application.Current.MainPage = new NavigationPage(new Search());
 
 	public void SummaryButton_Clicked(System.Object sender, System.EventArgs e)
-        => Application.Current.MainPage = new NavigationPage(new Summary());
+        => Application.Current.MainPage = new NavigationPage(new TestPage());
 
 
 
