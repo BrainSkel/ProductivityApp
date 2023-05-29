@@ -41,18 +41,6 @@
                 <Button Grid.Row="0" Grid.Column="5" Text="CREATE" HorizontalOptions="Center" Clicked="CreateButton_Clicked" Margin="12" BackgroundColor="{StaticResource ConfirmButtonColor}"></Button>
             </HorizontalStackLayout>
         </Grid>
-        <Grid x:Name="NavigationCreate" BackgroundColor="Transparent"  HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="1">
-            <HorizontalStackLayout
-                Spacing="4"
-                Grid.Row="0"
-                Grid.Column="3"
-                HorizontalOptions="Center">
-
-                <Button Grid.Row="0" Grid.Column="1" Text="Home" HorizontalOptions="Center" Margin="12" Clicked="HomeButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
-                <Button Grid.Row="0" Grid.Column="2" Text="Search" HorizontalOptions="Center" Margin="12" Clicked="SearchButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
-                <Button Grid.Row="0" Grid.Column="3" Text="Create" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
-            </HorizontalStackLayout>
-        </Grid>
         <ListView x:Name="MyListView" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -67,5 +55,17 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Grid x:Name="NavigationCreate" BackgroundColor="Transparent"  HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="1">
+            <HorizontalStackLayout
+                Spacing="4"
+                Grid.Row="0"
+                Grid.Column="3"
+                HorizontalOptions="Center">
+
+                <Button Grid.Row="0" Grid.Column="1" Text="Home" HorizontalOptions="Center" Margin="12" Clicked="HomeButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+                <Button Grid.Row="0" Grid.Column="2" Text="Search" HorizontalOptions="Center" Margin="12" Clicked="SearchButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+                <Button Grid.Row="0" Grid.Column="3" Text="Create" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+            </HorizontalStackLayout>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
