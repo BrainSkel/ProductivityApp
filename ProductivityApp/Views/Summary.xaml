@@ -31,7 +31,7 @@
                 </Picker.ItemsSource>
             </Picker>
         </Grid>
-        <Grid x:Name="Navigation" BackgroundColor="#474747" VerticalOptions="Center">
+        <Grid x:Name="Navigation" BackgroundColor="Transparent" VerticalOptions="Center">
             <HorizontalStackLayout
                 Spacing="4"
                 Grid.Row="0"
@@ -41,7 +41,7 @@
                 <Button Grid.Row="0" Grid.Column="5" Text="CREATE" HorizontalOptions="Center" Clicked="CreateButton_Clicked" Margin="12" BackgroundColor="{StaticResource ConfirmButtonColor}"></Button>
             </HorizontalStackLayout>
         </Grid>
-        <Grid x:Name="NavigationCreate" BackgroundColor="#474747"  HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="1">
+        <Grid x:Name="NavigationCreate" BackgroundColor="Transparent"  HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="1">
             <HorizontalStackLayout
                 Spacing="4"
                 Grid.Row="0"
