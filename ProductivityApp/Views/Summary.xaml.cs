@@ -1,6 +1,7 @@
 using Microsoft.Maui.Controls;
 using ProductivityApp.Data;
 using ProductivityApp.Models;
+using SQLite;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -43,8 +44,8 @@ namespace ProductivityApp.Views
             var taskItem = new TaskItem
             {
                 Name = TaskName.Text,
-                Date = DateTime.Parse("yyyy-MM-dd"),
-                Priority = PriorityPicker.SelectedItem.ToString(),
+                Date = DateTime.Parse(DateTime.Today.ToString("yyyy-MM-dd")),
+                Priority = PriorityPicker.SelectedItem != null ? PriorityPicker.SelectedItem.ToString() : string.Empty,
                 Done = false,
             };
             TaskItems.Add(taskItem);
@@ -60,5 +61,13 @@ namespace ProductivityApp.Views
                 _chartDatabase.DeleteRecordById(selectedItem.Id);
             }
         }
+        public void HomeButton_Clicked(System.Object sender, System.EventArgs e)
+            => Application.Current.MainPage = new NavigationPage(new MainPage());
+
+        public void SearchButton_Clicked(System.Object sender, System.EventArgs e)
+            => Application.Current.MainPage = new NavigationPage(new Search());
+
+        public void SummaryButton_Clicked(System.Object sender, System.EventArgs e)
+            => Application.Current.MainPage = new NavigationPage(new Summary());
     }
 }
