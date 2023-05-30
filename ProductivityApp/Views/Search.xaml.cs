@@ -106,7 +106,7 @@ public partial class Search : ContentPage
         => Application.Current.MainPage = new NavigationPage(new Search());
 
     public void SummaryButton_Clicked(System.Object sender, System.EventArgs e)
-        => Application.Current.MainPage = new NavigationPage(new TestPage());
+        => Application.Current.MainPage = new NavigationPage(new Summary());
 
 
 

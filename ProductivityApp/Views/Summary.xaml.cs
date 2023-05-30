@@ -26,18 +26,18 @@ namespace ProductivityApp.Views
             TaskItems = new ObservableCollection<TaskItem>(_chartDatabase.GetChartDataModel());
 
             // Bind the TaskItems collection to the ListView control
-            MyListView.ItemsSource = TaskItems;
+            //MyListView.ItemsSource = TaskItems;
         }
 
-        private void MarkAsDoneButton_Clicked(object sender, EventArgs e)
-        {
-            var selectedItem = MyListView.SelectedItem as TaskItem;
-            if (selectedItem != null)
-            {
-                selectedItem.Done = true;
-                _chartDatabase.SaveChartDataModelAsync(selectedItem);
-            }
-        }
+        //private void MarkAsDoneButton_Clicked(object sender, EventArgs e)
+        //{
+        //    var selectedItem = MyListView.SelectedItem as TaskItem;
+        //    if (selectedItem != null)
+        //    {
+        //        selectedItem.Done = true;
+        //        _chartDatabase.SaveChartDataModelAsync(selectedItem);
+        //    }
+        //}
 
         private void CreateButton_Clicked(object sender, EventArgs e)
         {
@@ -50,17 +50,19 @@ namespace ProductivityApp.Views
             };
             TaskItems.Add(taskItem);
             _chartDatabase.SaveChartDataModelAsync(taskItem);
+            Application.Current.MainPage = new NavigationPage(new MainPage());
+
         }
 
-        private void DeleteButton_Clicked(object sender, EventArgs e)
-        {
-            var selectedItem = MyListView.SelectedItem as TaskItem;
-            if (selectedItem != null)
-            {
-                TaskItems.Remove(selectedItem);
-                _chartDatabase.DeleteRecordById(selectedItem.Id);
-            }
-        }
+        //private void DeleteButton_Clicked(object sender, EventArgs e)
+        //{
+        //    var selectedItem = MyListView.SelectedItem as TaskItem;
+        //    if (selectedItem != null)
+        //    {
+        //        TaskItems.Remove(selectedItem);
+        //        _chartDatabase.DeleteRecordById(selectedItem.Id);
+        //    }
+        //}
         public void HomeButton_Clicked(System.Object sender, System.EventArgs e)
             => Application.Current.MainPage = new NavigationPage(new MainPage());
 

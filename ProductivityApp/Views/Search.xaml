@@ -35,20 +35,12 @@
 
                 <DataTemplate>
 
-
                     <ViewCell>
-
-
                         <StackLayout Padding="10,5">
-
                             <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
                             <Label Text="{Binding Priority}" FontSize="16" />
                             <Label Text="{Binding Date}" FontSize="14" />
                             <Button Text="✖" Clicked="Button_Clicked" BackgroundColor="#ffab24" HeightRequest="35" VerticalOptions="Center"/>
-
-
-
-
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
@@ -67,15 +59,12 @@
                 <Button Grid.Row="0" Grid.Column="3" Text="Summary" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
             </HorizontalStackLayout>
         </Grid>
-
-
-
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
     </Grid>
 </ContentPage>
 

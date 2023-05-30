@@ -1,9 +1,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProductivityApp.Views.Summary"
-             Title="Summary">
-    <VerticalStackLayout>
-        <Label Text="Summary"/>
+             Title="Create">
+    <Grid BackgroundColor="{StaticResource MainBackGroundColor}" x:Name="MainPage">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
 
         <Grid x:Name="MainLayout" BackgroundColor="#383838" HorizontalOptions="Fill" VerticalOptions="Center" ColumnDefinitions="auto,*" ColumnSpacing="4" Margin="20">
             <Grid.RowDefinitions>
@@ -30,18 +34,19 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-        </Grid>
-        <Grid x:Name="Navigation" BackgroundColor="Transparent" VerticalOptions="Center">
+            <Grid x:Name="Create" BackgroundColor="Transparent" VerticalOptions="Center" Grid.Row="3" Grid.ColumnSpan="5">
             <HorizontalStackLayout
                 Spacing="4"
                 Grid.Row="0"
                 Grid.Column="3"
                 HorizontalOptions="Center">
                 <!--<Button Grid.Row="0" Grid.Column="4" Text="MARK AS DONE" HorizontalOptions="Center" Margin="12" BackgroundColor="{StaticResource MarkAsDoneButtonColor}"></Button>-->
-                <Button Grid.Row="0" Grid.Column="5" Text="CREATE" HorizontalOptions="Center" Clicked="CreateButton_Clicked" Margin="12" BackgroundColor="{StaticResource ConfirmButtonColor}"></Button>
+                <Button Grid.Row="0" Grid.Column="2" Text="CREATE" HorizontalOptions="Center" Clicked="CreateButton_Clicked" Margin="12" BackgroundColor="{StaticResource ConfirmButtonColor}"></Button>
             </HorizontalStackLayout>
         </Grid>
-        <ListView x:Name="MyListView" HasUnevenRows="True">
+        </Grid>
+        
+        <!--<ListView x:Name="MyListView" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -54,18 +59,19 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
-        <Grid x:Name="NavigationCreate" BackgroundColor="Transparent"  HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="1">
+        </ListView>-->
+        <Grid x:Name="Navigation" BackgroundColor="#474747"  HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="1">
             <HorizontalStackLayout
                 Spacing="4"
                 Grid.Row="0"
                 Grid.Column="3"
                 HorizontalOptions="Center">
 
+                <!--<Button Grid.Row="0" Grid.Column="3" Text="Test Page" HorizontalOptions="Center" Margin="12" Clicked="TestPage" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>-->
                 <Button Grid.Row="0" Grid.Column="1" Text="Home" HorizontalOptions="Center" Margin="12" Clicked="HomeButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
                 <Button Grid.Row="0" Grid.Column="2" Text="Search" HorizontalOptions="Center" Margin="12" Clicked="SearchButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
-                <Button Grid.Row="0" Grid.Column="3" Text="Create" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
+                <Button Grid.Row="0" Grid.Column="3" Text="Summary" HorizontalOptions="Center" Margin="12" Clicked="SummaryButton_Clicked" BackgroundColor="{StaticResource ButtonBackgroundColor}"></Button>
             </HorizontalStackLayout>
         </Grid>
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>
